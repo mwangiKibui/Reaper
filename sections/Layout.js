@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from './Header'
-import Navbar from './Navbar'
 import Footer from './Footer'
 // import useRouter from 'next/router'
 
@@ -12,28 +11,27 @@ const Layout = ({ children, pageMeta }) =>
         title: 'Raspel',
         description: 'Visit Raspel to gain more information on how to implement various functions and use various languages in your coding career.',
         type: 'website',
-        ... pageMeta,
+        ...pageMeta,
     }
     return (
         <>
             <Head>
-            <title>{meta.title}</title>
-            <meta name="description" content={meta.description} />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            {/* <meta property="og:url" content={`http://localhost:3000${router.asPath}`} /> */}
-            <meta property="og:type" content={meta.type} />
-            <meta property="og:site_name" content={"A Coding Skill Guide"} />
-            <meta property="og:description" content={meta.description} />
-            <meta property="og:title" content={meta.title} />
-            <link rel="icon" href="raspel2.ico" />
+                <title>{meta.title}</title>
+                <meta name="description" content={meta.description} />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                {/* <meta property="og:url" content={`http://localhost:3000${router.asPath}`} /> */}
+                <meta property="og:type" content={meta.type} />
+                <meta property="og:site_name" content={"A Coding Skill Guide"} />
+                <meta property="og:description" content={meta.description} />
+                <meta property="og:title" content={meta.title} />
+                <link rel="icon" href="raspel2.ico" />
             </Head>
 
             <div className="min-h-screen flex flex-col">
                 <Header />
-                <Navbar />
                 <main className="flex-grow container mx-auto px-4 sm:px-6">{children}</main>
                 <Footer />
-        </div>
+            </div>
         </>
     )
 }

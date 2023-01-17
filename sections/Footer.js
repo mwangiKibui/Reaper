@@ -1,3 +1,5 @@
+import React from "react";
+
 const Footer = () =>
 {
     <footer className="px-4 sm:px-6 py-6 nt-24">

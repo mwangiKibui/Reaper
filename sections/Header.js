@@ -18,12 +18,16 @@ const Header = () =>
     const renderThemeChanger = () =>
     {
         if (!mounted) return null;
+
         const currentTheme = theme === 'system' ? systemTheme : theme;
 
         if (currentTheme === 'dark')
         {
             return (
-                <Sun className="w-7 h-7" role="button" onClick={() => setTheme('light')} />
+                <Sun
+                    className="w-7 h-7"
+                    role="button"
+                    onClick={() => setTheme('light')} />
             )
         }
         else
@@ -32,18 +36,13 @@ const Header = () =>
                 <Moon className="w-7 h-7" role="button" onClick={() => setTheme('dark')} />
             );
         }
-    };
+    }
     return (
         <header className='border-b border-gray-100 dark:border-gray-700'>
-            <div className="container mx-auto px-4 sm:px-6 py-4">
-                <p>
-                    {/* <image src="/raspel.ico" className='flex items-center space-x-1 text-green-600'></image> */}
-                    <span className="font-bold text-lg tracking-tight whitespace-nowrap"><Link href='/'>Raspel</Link></span>
-                </p>
+            <div className='container mx-auto px-6 sm:px-6 py-4s flex justify-between items-center'>
+                <span className="font-bold text-lg tracking-tight whitespace-nowrap"><Link href='/'>Raspel</Link></span>
             </div>
-            <div className='container flex justify-between items-center'>
-                {renderThemeChanger}
-            </div>
+            {renderThemeChanger}
         </header>
     )
 }
