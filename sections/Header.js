@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
-import { Moon, Sun } from '@heroicons/react/solid'
+import { MicrophoneIcon, Moon, MoonIcon, Sun, SunIcon } from '@heroicons/react/solid'
 import Link from "next/link"
 
 
@@ -24,7 +24,7 @@ const Header = () =>
         if (currentTheme === 'dark')
         {
             return (
-                <Sun
+                <SunIcon
                     className="w-7 h-7"
                     role="button"
                     onClick={() => setTheme('light')} />
@@ -33,7 +33,7 @@ const Header = () =>
         else
         {
             return (
-                <Moon className="w-7 h-7" role="button" onClick={() => setTheme('dark')} />
+                <MoonIcon className="w-7 h-7" role="button" onClick={() => setTheme('dark')} />
             );
         }
     }
@@ -42,7 +42,9 @@ const Header = () =>
             <div className='container mx-auto px-6 sm:px-6 py-4s flex justify-between items-center'>
                 <span className="font-bold text-lg tracking-tight whitespace-nowrap"><Link href='/'>Raspel</Link></span>
             </div>
-            {renderThemeChanger}
+            <div class="absolute top-0 right-0 h-16 w-16">
+                {renderThemeChanger()}
+            </div>
         </header>
     )
 }
