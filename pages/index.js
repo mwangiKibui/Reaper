@@ -16,7 +16,7 @@ export default function Home()
               <span className="block">Raspel</span>
             </h1>
             <h2 className="text-xl sm:text-2xl">
-              Raspel has been created by Robert Wachira
+              Raspel is a broad website.
             </h2>
           </div>
 
