@@ -11,4 +11,11 @@
   ::selection {
     @apply text-white bg-blue-600;
   }
+
+  .typewriter {
+    @apply border-solid border-r-4 box-border inline-block font-bold text-3xl overflow-hidden;
+    letter-spacing: 2px;
+    animation: typing 5s steps(30, end), blink 0.75s step-end infinite;
+    border-color: rgba(255, 165, 0, 1);
+  }
 }

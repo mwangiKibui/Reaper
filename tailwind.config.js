@@ -13,4 +13,14 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+
+  theme: {
+    extend: {
+      keyframes: {
+        typing: {
+          '0%, 100%': {}
+        }
+      }
+    }
+  }
 };
