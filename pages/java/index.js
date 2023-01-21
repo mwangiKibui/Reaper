@@ -1,19 +1,18 @@
-import Link from "next/link";
 import Layout from "../../sections/Layout";
-import Layout from "../../sections/Layout";
+import Link from "next/link"
 
-export default function NotFound()
+export default function Java()
 {
     return (
         <>
             <Layout pageMeta={{
-                title: '404 - Page Missing',
-                description: 'You stumbled upon a missing page'
+                title: 'Java Articles',
+                description: 'Java Articles'
             }}>
                 <div className="container mx-auto py-16 h-full flex flex-col justify-center items-center space-y-12">
                     <div className="text-center space-x-6">
-                        <h1 className="text-3xl">404 - Page Not Found</h1>
-                        <p className="text-xl">You have stumbled upon a missing page</p>
+                        <h1 className="text-3xl">Java Articles</h1>
+                        <p className="text-xl">You are currently on the Java Articles Page</p>
                     </div>
                     <div className="container mx-auto py-16 h-full flex flex-col justify-center items-center space-y-12">
                         <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md border-2 border-blue-600 hover:border-blue-700 text-lg
@@ -25,5 +24,4 @@ export default function NotFound()
             </Layout>
         </>
     )
-
 }
