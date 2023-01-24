@@ -1,5 +1,6 @@
 import Layout from '../sections/Layout'
 import Link from 'next/link'
+import Typewriter from 'typewriter-effect'
 
 export default function Home()
 {
@@ -21,25 +22,25 @@ export default function Home()
           </div>
 
           <div className='absolute left-0 top-55 h-16 w-70'>
-                <Typewriter
-                    onInit={(typewriter) =>
-                    {
-                        typewriter.typeString('Raspel has been created.')
-                            .pauseFor(100)
-                            .deleteChars(8)
-                            .typeString(' built using Next.js')
-                            .pauseFor(100)
-                            .deleteAll()
-                            .typeString('This is a live project.')
-                            .pauseFor(100)
-                            .deleteAll()
-                            .start();
-                    }}
-                    options={{
-                        loop: true
-                    }}
-                />
-            </div>
+            <Typewriter
+              onInit={(typewriter) =>
+              {
+                typewriter.typeString('Raspel has been created.')
+                  .pauseFor(100)
+                  .deleteChars(8)
+                  .typeString(' built using Next.js')
+                  .pauseFor(100)
+                  .deleteAll()
+                  .typeString('This is a live project.')
+                  .pauseFor(100)
+                  .deleteAll()
+                  .start();
+              }}
+              options={{
+                loop: true
+              }}
+            />
+          </div>
 
         </section>
       </Layout>

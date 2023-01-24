@@ -12,8 +12,8 @@ export default function Node()
                 description: 'Node.js Articles'
             }}>
 
-                <div class="pt-20">
-                    <h1 class="text-center text-2xl font-bold text-gray-800">Node.js Articles</h1>
+                <div className="pt-20">
+                    <h1 className="text-center text-2xl font-bold text-gray-800">Node.js Articles</h1>
                 </div>
 
 

@@ -5,7 +5,7 @@ export default function Intro()
 {
     return (
         <>
-            <p className="text-xl sm:text-2xl absolute left-0 top-40 h-16 w-16">
+            <p className="text-xl sm:text-2xl absolute left-0 top-40 h-16">
                 Welcome. I am Robert Wachira
             </p>
             <div className='absolute left-0 top-55 h-16 w-70'>
