@@ -27,9 +27,9 @@ export default function Portfolio()
                             <Projects />
                         </div>
 
-                        <div className="container mx-auto py-16 top-80 h-14 w-17 space-y-12">
+                        {/* <div className="container mx-auto py-16 h-14 w-17 space-y-12">
                             <Contact />
-                        </div>
+                        </div> */}
                     </div>
                 </section>
             </Layout>
