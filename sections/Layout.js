@@ -30,9 +30,9 @@ const Layout = ({ children, pageMeta }) =>
             <div className="min-h-screen flex flex-col">
                 <Header />
                 <main className="flex-grow container mx-auto px-4 sm:px-6">{children}</main>
-                <div className='absolute inset-x-0 bottom-0 h-16'>
+                {/* <div className='absolute inset-x-0 bottom-0 h-16 text-center'>
                     <Footer />
-                </div>
+                </div> */}
             </div>
         </>
     )
