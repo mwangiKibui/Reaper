@@ -13,7 +13,7 @@ export default function Node()
             }}>
 
                 <div className="pt-20">
-                    <h1 className="text-center text-2xl font-bold text-gray-800">Node.js Articles</h1>
+                    <h1 className="text-center text-2xl font-bold">Node.js Articles</h1>
                 </div>
 
 
