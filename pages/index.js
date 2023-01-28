@@ -11,15 +11,14 @@ export default function Home()
         description: 'Homepage'
       }}>
         <section className="flex flex-col justify-center items-center space-y-10 mt-12 sm:mt-24 md:mt-32">
-          <div className="space-y-4 max-w-4xl mx-auto text-center">
+          {/* <div className="space-y-4 max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-7xl font-bold capitalize">
-              <span className="block">Welcome to </span>
-              <span className="block">Raspel</span>
+              <span className="block">Welcome to Raspel</span>
             </h1>
             <h2 className="text-xl sm:text-2xl">
               Raspel is a broad website.
             </h2>
-          </div>
+          </div> */}
 
           <div className='absolute left-0 top-55 h-16 w-70'>
             <Typewriter
