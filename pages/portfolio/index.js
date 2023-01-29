@@ -23,9 +23,9 @@ export default function Portfolio()
                                 Download CV
                             </Link>
                         </div>
-                        <div>
+                        {/* <div>
                             <Projects />
-                        </div>
+                        </div> */}
 
                         {/* <div className="container mx-auto py-16 h-14 w-17 space-y-12">
                             <Contact />
