@@ -8,7 +8,7 @@ export default function Node()
     return (
         <>
             <Layout pageMeta={{
-                title: 'Node.js Articles',
+                title: 'Node.js',
                 description: 'Node.js Articles'
             }}>
 

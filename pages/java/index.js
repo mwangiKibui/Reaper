@@ -6,7 +6,7 @@ export default function Java()
     return (
         <>
             <Layout pageMeta={{
-                title: 'Java Articles',
+                title: 'Java',
                 description: 'Java Articles'
             }}>
                 <div className="container mx-auto py-16 h-full flex flex-col justify-center items-center space-y-12">
