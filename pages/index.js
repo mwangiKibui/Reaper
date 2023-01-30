@@ -1,7 +1,6 @@
 import Layout from '../sections/Layout'
 import Link from 'next/link'
 import Typewriter from 'typewriter-effect'
-import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 
 export default function Home({ allPostsData })
@@ -45,16 +44,16 @@ export default function Home({ allPostsData })
 
       </section> */}
 
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h2 className={utilStyles.headingLg}>Blog</h2>
-          <ul className={utilStyles.list}>
+        <section className='text-xl pt-4'>
+          <h2 className='text-2xl m-0'>Blog</h2>
+          <ul className='m-1'>
             {allPostsData.map(({ id, date, title }) => (
-              <li className={utilStyles.listItem} key={id}>
+              <li className='margin-1' key={id}>
                 <Link href={`/posts/${id}`}>
                   {title}
                 </Link>
                 <br />
-                <small className={utilStyles.lightText}>
+                <small className='text-color-#999'>
                   <Date dateString={date} />
                 </small>
               </li>
