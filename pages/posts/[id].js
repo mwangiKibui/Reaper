@@ -1,6 +1,7 @@
 import Layout from '../../sections/Layout'
 import Date from '../../sections/Date'
 import { getAllPostIds, getPostData } from '../../lib/posts'
+import Head from 'next/head'
 
 
 export default function Post({ postData })
