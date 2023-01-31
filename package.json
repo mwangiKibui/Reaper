@@ -13,6 +13,7 @@
     "@next/font": "13.1.1",
     "autoprefixer": "^9.8.8",
     "babel-preset-es2015": "^6.24.1",
+    "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "gray-matter": "^4.0.3",
     "mongodb": "^4.13.0",

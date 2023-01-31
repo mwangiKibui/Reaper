@@ -2,6 +2,7 @@ import Layout from '../sections/Layout'
 import Link from 'next/link'
 import Typewriter from 'typewriter-effect'
 import { getSortedPostsData } from "../lib/posts";
+import Image from 'next/image';
 
 export default function Home({ allPostsData })
 {
@@ -47,12 +48,16 @@ export default function Home({ allPostsData })
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
           <ul className='m-1'>
-            {allPostsData.map(({ id, date, title }) => (
+            {allPostsData.map(({ id, date, title, image }) => (
               <li className='margin-1' key={id}>
                 <Link href={`/posts/${id}`}>
                   {title}
                   <br />
-                  {image}
+                  <Image
+                    src={image}
+                    width='350'
+                    height='350'
+                  />
                   <small className='text-color-#999'>
                     <Date dateString={date} />
                   </small>
