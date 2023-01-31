@@ -11,11 +11,11 @@ export default function Post({ postData })
                 <title>{postData.title}</title>
             </Head>
             <article>
-                <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+                <h1 className='text-xl pt-4'></h1>
                 <div>
                     {postData.image}
                 </div>
-                <div className={utilStyles.lightText}>
+                <div className='text-color-#999'>
                     <Date dateString={postData.date} />
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
