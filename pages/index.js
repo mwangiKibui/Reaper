@@ -2,6 +2,7 @@ import Layout from '../sections/Layout'
 import Link from 'next/link'
 import Typewriter from 'typewriter-effect'
 import { getSortedPostsData } from "../lib/posts";
+import Image from 'next/image'
 
 export default function Home({ allPostsData })
 {
@@ -53,6 +54,11 @@ export default function Home({ allPostsData })
                   {title}
                 </Link>
                 <br />
+                <Image
+                  src="https://images.unsplash.com/photo-1675119713402-e4e295197e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                  width='350'
+                  height='350'
+                />
                 <small className='text-color-#999'>
                   <Date dateString={date} />
                 </small>
