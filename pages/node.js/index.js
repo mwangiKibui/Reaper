@@ -17,6 +17,10 @@ export default function Node()
                     <h1 className="text-center text-2xl font-bold">Node.js Articles</h1>
                 </div>
 
+                <div>
+                    <Posts />
+                </div>
+
 
 
             </Layout >
