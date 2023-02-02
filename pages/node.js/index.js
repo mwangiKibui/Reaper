@@ -1,6 +1,7 @@
 import Layout from "../../sections/Layout";
 import Link from "next/link"
 // import { getSortedPostsData } from '../../lib/posts';
+import Posts from "../posts/[id]"
 
 export default function Node()
 {
