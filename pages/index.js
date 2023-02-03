@@ -12,7 +12,7 @@ export default function Home({ allPostsData })
         title: 'Raspel',
         description: 'Homepage'
       }}>
-        
+
         {/* <div className='absolute left-0 top-55 h-16 w-70'>
           <Typewriter
             onInit={(typewriter) =>
@@ -44,11 +44,11 @@ export default function Home({ allPostsData })
                 <Link href={`/posts/${id}`}>
                   {title}
                   <br />
-                  <Image
+                  {/* <Image
                     src={image}
                     width='350'
                     height='350'
-                  />
+                  /> */}
                   <small className='text-color-#999'>
                     <Date dateString={date} />
                   </small>
