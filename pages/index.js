@@ -2,7 +2,10 @@ import Layout from '../sections/Layout'
 import Link from 'next/link'
 import Typewriter from 'typewriter-effect'
 import { getSortedPostsData } from "../lib/posts";
-import Image from 'next/image';
+import Image from 'next/image'
+import fs from 'fs'
+import path from 'path';
+import matter from 'gray-matter';
 
 export default function Home({ allPostsData })
 {
@@ -44,11 +47,11 @@ export default function Home({ allPostsData })
                 <Link href={`/posts/${id}`}>
                   {title}
                   <br />
-                  {/* <Image
-                    src={image}
-                    width='350'
-                    height='350'
-                  /> */}
+                  <Image
+                    src={post.thumbnailUrl}
+                    width={350}
+                    height={350}
+                  />
                   <small className='text-color-#999'>
                     <Date dateString={date} />
                   </small>
@@ -65,10 +68,30 @@ export default function Home({ allPostsData })
 
 export async function getStaticProps()
 {
-  const allPostsData = getSortedPostsData();
+  const files = fs.readdirSync(path.join('posts'))
+
+  const posts = files.map(filename =>
+  {
+    const markdownWithMeta = fs.readdirSync(path.join('posts', filename), 'utf-8')
+    const { data: frontMatter } = matter(markdownWithMeta)
+
+    return {
+      frontMatter,
+      slug: filename.split('.')[0]
+    }
+  })
+
   return {
     props: {
-      allPostsData,
-    },
-  };
+      posts
+    }
+  }
+
+
+  //   const allPostsData = getSortedPostsData();
+  //   return {
+  //     props: {
+  //       allPostsData,
+  //     },
+  //   };
 }

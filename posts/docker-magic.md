@@ -1,10 +1,7 @@
 ---
 title: "docker isn't magic: it isn't a virtual machine either"
 date: '2021-03-22'
-# image:
-#   [
-#     https://images.unsplash.com/photo-1675119713402-e4e295197e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80,
-#   ]
+thumbnailUrl: '../public/Sample Phots/Sample.avif'
 ---
 
 Docker is the most popular engine for running Linux containers which are an increasingly popular way to deploy applications. Many people use containers but fewer people know what a container actually does. I hope you enjoy this short talk I gave to the [Linux and Unix Users Group at Virginia Tech](https://vtluug.org) where I overview what actually happens when you type `docker run`.
