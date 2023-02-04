@@ -4,7 +4,35 @@ import Typewriter from 'typewriter-effect'
 import { getSortedPostsData } from "../lib/posts";
 import Image from 'next/image';
 
-export default function Home({ allPostsData })
+
+
+export async function getStaticProps()
+{
+  try
+  {
+    const res = await fetch("https://github.com/Robert-Wachira/Articles")
+    const { articles } = await res.json()
+    return {
+      props: { articles },
+    }
+  } catch (error)
+  {
+    console.log(error)
+    return {
+      props: { articles: [] },
+    }
+  }
+
+
+  // const allPostsData = getSortedPostsData();
+  // return {
+  //   props: {
+  //     allPostsData,
+  //   },
+  // };
+}
+
+export default function Home({ articles })
 {
   return (
     <>
@@ -39,13 +67,13 @@ export default function Home({ allPostsData })
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
           <ul className='m-1'>
-            {allPostsData.map(({ id, date, title, image }) => (
-              <li className='margin-1' key={id}>
+            {articles.map(({ article }) => (
+              <li className='margin-1' key={article.id}>
                 <Link href={`/posts/${id}`}>
-                  {title}
+                  {article.title}
                   <br />
                   <Image
-                    src={image}
+                    src={article.image}
                     width='350'
                     height='350'
                   />
@@ -63,12 +91,4 @@ export default function Home({ allPostsData })
   )
 }
 
-export async function getStaticProps()
-{
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+
