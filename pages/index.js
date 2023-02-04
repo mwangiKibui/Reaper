@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Typewriter from 'typewriter-effect'
 import { getSortedPostsData } from "../lib/posts";
 import Image from 'next/image'
-import fs from 'fs'
+import * as fs from 'fs'
 import path from 'path';
 import matter from 'gray-matter';
 
@@ -42,13 +42,13 @@ export default function Home({ allPostsData })
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
           <ul className='m-1'>
-            {allPostsData.map(({ id, date, title, image }) => (
+            {allPostsData.map(({ id, date, title, thumbnailUrl }) => (
               <li className='margin-1' key={id}>
                 <Link href={`/posts/${id}`}>
                   {title}
                   <br />
                   <Image
-                    src={post.thumbnailUrl}
+                    src={dthumbnailUrl}
                     width={350}
                     height={350}
                   />
