@@ -8,31 +8,31 @@ import Image from 'next/image';
 
 export async function getStaticProps()
 {
-  try
-  {
-    const res = await fetch("https://github.com/Robert-Wachira/Articles")
-    const { articles } = await res.json()
-    return {
-      props: { articles },
-    }
-  } catch (error)
-  {
-    console.log(error)
-    return {
-      props: { articles: [] },
-    }
-  }
+  // try
+  // {
+  //   const res = await fetch("https://github.com/Robert-Wachira/Articles")
+  //   const { articles } = await res.json()
+  //   return {
+  //     props: { articles },
+  //   }
+  // } catch (error)
+  // {
+  //   console.log(error)
+  //   return {
+  //     props: { articles: [] },
+  //   }
+  // }
 
 
-  // const allPostsData = getSortedPostsData();
-  // return {
-  //   props: {
-  //     allPostsData,
-  //   },
-  // };
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 }
 
-export default function Home({ articles })
+export default function Home({ allPostsData })
 {
   return (
     <>
@@ -67,13 +67,13 @@ export default function Home({ articles })
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
           <ul className='m-1'>
-            {articles.map(({ article }) => (
-              <li className='margin-1' key={article.id}>
+            {allPostsData.map(({ allPostsData }) => (
+              <li className='margin-1' key={allPostsData.id}>
                 <Link href={`/posts/${id}`}>
-                  {article.title}
+                  {allPostsData.title}
                   <br />
                   <Image
-                    src={article.thumbnailUrl}
+                    src={allPostsData.thumbnailUrl}
                     width='350'
                     height='350'
                   />
