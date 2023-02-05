@@ -8,22 +8,6 @@ import Image from 'next/image';
 
 export async function getStaticProps()
 {
-  // try
-  // {
-  //   const res = await fetch("https://github.com/Robert-Wachira/Articles")
-  //   const { articles } = await res.json()
-  //   return {
-  //     props: { articles },
-  //   }
-  // } catch (error)
-  // {
-  //   console.log(error)
-  //   return {
-  //     props: { articles: [] },
-  //   }
-  // }
-
-
   const allPostsData = getSortedPostsData();
   return {
     props: {
