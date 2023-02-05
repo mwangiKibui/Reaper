@@ -73,7 +73,7 @@ export default function Home({ articles })
                   {article.title}
                   <br />
                   <Image
-                    src={article.image}
+                    src={article.thumbnailUrl}
                     width='350'
                     height='350'
                   />
