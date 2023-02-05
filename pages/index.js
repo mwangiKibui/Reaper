@@ -32,7 +32,7 @@ export async function getStaticProps()
   };
 }
 
-export default function Home({ allPostsData })
+export default function Home({ posts })
 {
   return (
     <>
@@ -67,13 +67,13 @@ export default function Home({ allPostsData })
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
           <ul className='m-1'>
-            {allPostsData.map(({ allPostsData }) => (
-              <li className='margin-1' key={allPostsData.id}>
+            {posts.map(({ post, id, title, thumbnailUrl }) => (
+              <li className='margin-1' key={post.id}>
                 <Link href={`/posts/${id}`}>
-                  {allPostsData.title}
+                  {title}
                   <br />
                   <Image
-                    src={allPostsData.thumbnailUrl}
+                    src={thumbnailUrl}
                     width='350'
                     height='350'
                   />
