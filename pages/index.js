@@ -1,7 +1,7 @@
 import Layout from '../sections/Layout'
 import Link from 'next/link'
 import Typewriter from 'typewriter-effect'
-import { getAllPosts, getSortedPostsData } from "../lib/posts";
+import { getAllPosts, posts } from "../lib/posts";
 import Image from 'next/image';
 
 
@@ -67,7 +67,7 @@ export default function Home({ allPostsData })
 
 export async function getStaticProps()
 {
-  const allPostsData = getAllPosts();
+  const posts = getAllPosts();
   return {
     props: {
       allPostsData,
