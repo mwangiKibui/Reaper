@@ -53,7 +53,7 @@ const Header = () =>
                     </nav>
                 </div>
             </div>
-            <div class="absolute top-0 right-0 pt-5 h-10 w-16">
+            <div className="absolute top-0 right-0 pt-5 h-10 w-16">
                 {renderThemeChanger()}
             </div>
 
