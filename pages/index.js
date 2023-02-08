@@ -14,29 +14,6 @@ export default function Home({ allPostsData })
         description: 'Homepage'
       }}>
 
-        {/* <div className='absolute left-0 top-55 h-16 w-70'>
-          <Typewriter
-            onInit={(typewriter) =>
-            {
-              typewriter.typeString('Raspel has been created.')
-                .pauseFor(100)
-                .deleteChars(8)
-                .typeString(' built using Next.js')
-                .pauseFor(100)
-                .deleteAll()
-                .typeString('This is a live project.')
-                .pauseFor(100)
-                .deleteAll()
-                .start();
-            }}
-            options={{
-              loop: true
-            }}
-          />
-        </div>
-
-      </section> */}
-
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
           <ul className='m-1'>
