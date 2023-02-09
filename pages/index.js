@@ -5,7 +5,7 @@ import { getAllPosts, posts } from "../lib/posts";
 import Image from 'next/image';
 
 
-export default function Home({ allPostsData })
+export default function Home({ posts })
 {
   return (
     <>
@@ -16,28 +16,7 @@ export default function Home({ allPostsData })
 
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
-          <ul className='m-1'>
-            {allPostsData.map(({ slug, excerpt, title, date }) => (
-              <li className='margin-1' key={id}>
-                <Link href={`/posts/${id}`}>
-                  {title}
-                  <br />
-                  <Image
-                    src={image}
-                    width='350'
-                    height='350'
-                  />
-                  <div>
-                    {excerpt}
-                  </div>
-                  <small className='text-color-#999'>
-                    <Date dateString={date} />
-                  </small>
-                </Link>
-
-              </li>
-            ))}
-          </ul>
+          <Articles posts={posts} />
         </section>
       </Layout>
     </>
@@ -47,7 +26,8 @@ export default function Home({ allPostsData })
 
 export async function getStaticProps()
 {
-  const posts = getAllPosts();
+  const posts = getAllPosts()
+    .map((post) => post.meta)
   return {
     props: {
       posts,
