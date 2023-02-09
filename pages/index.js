@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Typewriter from 'typewriter-effect'
 import { getAllPosts, posts } from "../lib/posts";
 import Image from 'next/image';
+import Articles from '../components/Articles';
 
 
 export default function Home({ posts })
