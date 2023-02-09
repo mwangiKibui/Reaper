@@ -30,6 +30,7 @@
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18"
+    "@types/node": "^18.11.18",
+    "webpack": "^5.75.0"
   }
 }
