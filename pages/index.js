@@ -31,7 +31,7 @@ export async function getStaticProps()
     .map((post) => post.meta)
   return {
     props: {
-      posts,
+      posts
     },
   };
 }
