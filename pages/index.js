@@ -5,7 +5,7 @@ import { getAllPosts, posts } from "../lib/posts";
 import Image from 'next/image';
 
 
-export default function Home({ allPostsData })
+export default function Home({ posts })
 {
   return (
     <>
@@ -17,7 +17,7 @@ export default function Home({ allPostsData })
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
           <ul className='m-1'>
-            {allPostsData.map(({ post, id, title, image, date }) => (
+            {allPostsData.map(({ slug, exce }) => (
               <li className='margin-1' key={id}>
                 <Link href={`/posts/${id}`}>
                   {title}
