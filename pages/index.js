@@ -17,7 +17,12 @@ export default function Home({ posts })
 
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
-          <Articles posts={posts} />
+          <ul>
+            {posts.map((post) => (
+              <li key={post.slug}>{post.title}</li>
+            ))}
+          </ul>
+          {/* <Articles posts={posts} /> */}
         </section>
       </Layout>
     </>

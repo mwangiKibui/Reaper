@@ -15,13 +15,13 @@ export default function Articles({ posts })
                     <p>
                         {post.excerpt}
                     </p>
-                    <p className="text-sm">
+                    {/* <p className="text-sm">
                         {posts.tags.map((tag) => (
                             <Link key={tag} href={`/tags/${tag}`}>
                                 {tag}
                             </Link>
                         ))}
-                    </p>
+                    </p> */}
                 </li>
             ))}
         </ul>
