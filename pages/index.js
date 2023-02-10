@@ -1,9 +1,9 @@
 import Layout from '../sections/Layout'
 import Link from 'next/link'
 import Typewriter from 'typewriter-effect'
-import { getAllPosts, posts } from "../lib/posts";
+import Blog, { getAllPosts, posts } from "../lib/blog";
 import Image from 'next/image';
-import Articles from '../components/Articles';
+// import Articles from '../components/Articles'
 
 
 export default function Home({ posts })
@@ -18,25 +18,11 @@ export default function Home({ posts })
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
           <ul>
-            {posts.map((post) => (
-              <li key={post.slug}>{post.title}</li>
-            ))}
+            <Blog posts={posts} />
           </ul>
-          {/* <Articles posts={posts} /> */}
         </section>
       </Layout>
     </>
   )
 }
 
-
-export async function getStaticProps()
-{
-  const posts = getAllPosts()
-    .map((post) => post.meta)
-  return {
-    props: {
-      posts
-    },
-  };
-}

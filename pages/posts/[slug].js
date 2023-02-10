@@ -1,54 +1,55 @@
 import Layout from '../../sections/Layout'
-import { getPostFromSlug, getSlugs, PostMeta } from '../../lib/posts'
+import md from 'markdown-it'
 import Head from 'next/head'
-import { GetStaticProps, GetStaticPaths } from 'next'
-import { serialize } from 'v8'
 
 
-const Postp = {
-    meta: PostMeta
-}
-
-
-export default function Post({ post, post: Postp })
+export default function Post({ frontmatter, content })
 {
+
+    const { title, author, category, date, bannerImage, tags } = frontmatter
+
     return (
         <Layout>
             <Head>
-                <title>{post.meta.title}</title>
+                <title>{title}</title>
             </Head>
-            <h1 className='text-xl pt-4'>{post.meta.title}</h1>
-            {/* <div>
-                    {post.meta.image}
-                </div> */}
-            <Postp {...post.source} />
+            <h1 className='text-xl pt-4'>{title}</h1>
+            <h2>{author} || {date}</h2>
+            <h3>{category} || {tags.join()}</h3>
+            <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
         </Layout>
     )
 }
 
-export async function getStaticProps({ params })
-{
-    const { slug } = params({ slug: String })
-    const { content, meta } = getPostFromSlug(slug)
-
-    const postsSource = serialize(content)
-
-    return {
-        props: {
-            post: {
-                postsSource,
-                meta
-            }
-        }
-    }
-}
-
 export async function getStaticPaths()
 {
-    const paths = getSlugs().map((slug) => ({ params: { slug } }))
+    const files = fs.readdirSync("posts");
+    // Generate a path for each one
+    const paths = files.map((fileName) => ({
+        params: {
+            slug: fileName.replace(".md", ""),
+        },
+    }));
 
     return {
         paths,
         fallback: false,
     }
 }
+
+export async function getStaticProps({ params: { slug } })
+{
+    const fileName = fs.readFileSync(`posts/${slug}.md`, 'utf-8');
+    const { data: frontmatter, content } = matter(fileName);
+
+    return {
+        props: {
+            post: {
+                frontmatter,
+                content
+            }
+        }
+    }
+}
+
+
