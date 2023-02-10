@@ -1,10 +1,16 @@
 import Layout from '../../sections/Layout'
-import { getPostFromSlug, getSlugs,  meta } from '../../lib/posts'
+import { getPostFromSlug, getSlugs, PostMeta } from '../../lib/posts'
 import Head from 'next/head'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { serialize } from 'v8'
 
 
-export default function Post({ post })
+const Postp = {
+    meta: PostMeta
+}
+
+
+export default function Post({ post, post: Postp })
 {
     return (
         <Layout>
@@ -15,6 +21,7 @@ export default function Post({ post })
             {/* <div>
                     {post.meta.image}
                 </div> */}
+            <Postp {...post.source} />
         </Layout>
     )
 }
@@ -24,10 +31,12 @@ export async function getStaticProps({ params })
     const { slug } = params({ slug: String })
     const { content, meta } = getPostFromSlug(slug)
 
+    const postsSource = serialize(content)
+
     return {
         props: {
             post: {
-                content,
+                postsSource,
                 meta
             }
         }
