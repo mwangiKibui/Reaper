@@ -1,7 +1,7 @@
 import Layout from '../../sections/Layout'
-import Date from '../../sections/Date'
-import { getPostFromSlug, getSlugs, meta } from '../../lib/posts'
+import { getPostFromSlug, getSlugs,  meta } from '../../lib/posts'
 import Head from 'next/head'
+import { GetStaticProps, GetStaticPaths } from 'next'
 
 
 export default function Post({ post })
@@ -34,12 +34,12 @@ export async function getStaticProps({ params })
     }
 }
 
-export async function getStaticPaths({ params })
+export async function getStaticPaths()
 {
-    const postData = await getPostData(params.id)
+    const paths = getSlugs().map((slug) => ({ params: { slug } }))
+
     return {
-        props: {
-            postData
-        }
+        paths,
+        fallback: false,
     }
 }
