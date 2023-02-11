@@ -6,8 +6,8 @@ import fetcher from '@/lib/fetcher';
 
 const Articles = ({ title, summary, slug }) =>
 {
-    const { data } = useSWR(`/api/views/${slug}`, fetcher);
-    const views = data?.total;
+    // const { data } = useSWR(`/api/views/${slug}`, fetcher);
+    // const views = data?.total;
 
     return (
         <Link href={`/blog/${slug}`}>
