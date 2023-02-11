@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-import Container from '@/components/Container';
+import Layout from '../section/Layout'
 import BlogPost from '@/components/BlogPost';
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 
-export default function Blog({ posts }) {
+export default function Blog({ posts })
+{
   const [searchValue, setSearchValue] = useState('');
   const filteredBlogPosts = posts
     .sort(
@@ -16,7 +17,7 @@ export default function Blog({ posts }) {
     );
 
   return (
-    <Container
+    <Layout
       title="Blog"
       description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
     >
@@ -82,11 +83,12 @@ export default function Blog({ posts }) {
           <BlogPost key={frontMatter.title} {...frontMatter} />
         ))}
       </div>
-    </Container>
+    </Layout>
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps()
+{
   const posts = await getAllFilesFrontMatter('blog');
 
   return { props: { posts } };
