@@ -1,7 +1,6 @@
 import Layout from '../sections/Layout'
 import Link from 'next/link'
-import Blog, { getAllPosts, posts } from "../lib/blog";
-import Image from 'next/image';
+import Blog from "../lib/blog";
 
 
 export default function Home({ posts })
