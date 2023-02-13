@@ -1,6 +1,7 @@
 import Layout from '../../sections/Layout'
 import md from 'markdown-it'
 import Head from 'next/head'
+import Image from 'next/image'
 
 
 export default function Post({ frontmatter, content })
@@ -16,6 +17,10 @@ export default function Post({ frontmatter, content })
             <h1 className='text-xl pt-4'>{title}</h1>
             <h2>{author} || {date}</h2>
             <h3>{category} || {tags.join()}</h3>
+            <Image
+                src={bannerImage}
+                height={350}
+            />
             <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
         </Layout>
     )
