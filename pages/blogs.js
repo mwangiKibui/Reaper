@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Layout from '../section/Layout'
-import BlogPost from '@/components/BlogPost';
+import BlogPost from '@/components/Articles';
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 
 export default function Blog({ posts })

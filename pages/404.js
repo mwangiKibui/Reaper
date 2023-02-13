@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Layout from "../sections/Layout";
+import Layout from "../sections/Layout"
+
 
 export default function NotFound()
 {
@@ -15,6 +16,8 @@ export default function NotFound()
                         <p className="text-xl pt-5">You have stumbled upon a missing page</p>
                     </div>
                 </div>
+
+                //come up with the rotating animation for loading up.
             </Layout>
         </>
     )

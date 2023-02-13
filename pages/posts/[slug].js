@@ -20,6 +20,7 @@ export default function Post({ frontmatter, content })
             <Image
                 src={bannerImage}
                 height={350}
+                width={350}
             />
             <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
         </Layout>
