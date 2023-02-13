@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 import Layout from '../section/Layout'
-import BlogPost from '@/components/Articles';
+import Articles from '@/components/Articles';
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 
 export default function Blog({ posts })
 {
   const [searchValue, setSearchValue] = useState('');
-  const filteredBlogPosts = posts
+  const filteredArticles = posts
     .sort(
       (a, b) =>
         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
@@ -58,17 +58,17 @@ export default function Blog({ posts })
             <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
               Most Popular
             </h3>
-            <BlogPost
+            <Articles
               title="Everything I Know About Style Guides, Design Systems, and Component Libraries"
               summary="A deep-dive on everything I've learned in the past year building style guides, design systems, component libraries, and their best practices."
               slug="style-guides-component-libraries-design-systems"
             />
-            <BlogPost
+            <Articles
               title="How Stripe Designs Beautiful Websites"
               summary="Examining the tips and tricks used to make Stripe's website design a notch above the rest."
               slug="how-stripe-designs-beautiful-websites"
             />
-            <BlogPost
+            <Articles
               title="Creating a Monorepo with Lerna & Yarn Workspaces"
               summary="In this guide, you will learn how to create a Monorepo to manage multiple packages with a shared build, test, and release process."
               slug="monorepo-lerna-yarn-workspaces"
@@ -78,9 +78,9 @@ export default function Blog({ posts })
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
           All Posts
         </h3>
-        {!filteredBlogPosts.length && 'No posts found.'}
-        {filteredBlogPosts.map((frontMatter) => (
-          <BlogPost key={frontMatter.title} {...frontMatter} />
+        {!filteredArticles.length && 'No posts found.'}
+        {filteredArticles.map((frontMatter) => (
+          <Articles key={frontMatter.title} {...frontMatter} />
         ))}
       </div>
     </Layout>
