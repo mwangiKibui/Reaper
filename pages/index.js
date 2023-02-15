@@ -1,6 +1,5 @@
 import Layout from '../sections/Layout'
 import Link from 'next/link'
-import Blog from "../lib/blog";
 
 
 export default function Home({ posts })
@@ -15,7 +14,7 @@ export default function Home({ posts })
         <section className='text-xl pt-4'>
           <h2 className='text-2xl m-0'>Blog</h2>
           <ul>
-            <Blog posts={posts} />
+            {allPosts.length > 0 && <PostList posts={allPosts} />}
           </ul>
         </section>
       </Layout>
@@ -23,3 +22,18 @@ export default function Home({ posts })
   )
 }
 
+export async function getStaticProps()
+{
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ])
+
+  return {
+    props: { allPosts },
+  }
+}

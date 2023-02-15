@@ -1,61 +1,77 @@
-import Layout from '../../sections/Layout'
-import md from 'markdown-it'
-import Head from 'next/head'
-import Image from 'next/image'
+import { useRouter } from "next/router"
+import Layout from "../../components/Layout"
+import { getPostBySlug, getAllPosts } from "../../lib/blog"
+import markdownToHtml from "../../lib/markdownToHtml"
+import ErrorPage from "../404"
 
-
-export default function Post({ frontmatter, content })
+export default function Post({ post, preview })
 {
-
-    const { title, author, category, date, bannerImage, tags } = frontmatter
-
+    const router = useRouter()
+    if (!router.isFallback && !post?.slug)
+    {
+        return <ErrorPage statusCode={404} />
+    }
     return (
-        <Layout>
-            <Head>
-                <title>{title}</title>
-            </Head>
-            <h1 className='text-xl pt-4'>{title}</h1>
-            <h2>{author} || {date}</h2>
-            <h3>{category} || {tags.join()}</h3>
-            <Image
-                src={bannerImage}
-                height={350}
-                width={350}
-            />
-            <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+        <Layout preview={preview}>
+            {router.isFallback ? (
+                <PostTitle>Loading…</PostTitle>
+            ) : (
+                <>
+                    <article className="mb-32">
+                        <Head>
+                            <title>{post.title} | Delba de Oliveira</title>
+                            <meta property="og:image" content={post.ogImage.url} />
+                        </Head>
+                        <PostHeader
+                            title={post.title}
+                            coverImage={post.coverImage}
+                            date={post.date}
+                            author={post.author}
+                        />
+                        <PostBody content={post.content} />
+                    </article>
+                </>
+            )}
         </Layout>
     )
 }
 
-export async function getStaticPaths()
+export async function getStaticProps({ params })
 {
-    const files = fs.readdirSync("posts");
-    // Generate a path for each one
-    const paths = files.map((fileName) => ({
-        params: {
-            slug: fileName.replace(".md", ""),
-        },
-    }));
-
-    return {
-        paths,
-        fallback: false,
-    }
-}
-
-export async function getStaticProps({ params: { slug } })
-{
-    const fileName = fs.readFileSync(`posts/${slug}.md`, 'utf-8');
-    const { data: frontmatter, content } = matter(fileName);
+    const post = getPostBySlug(params.slug, [
+        "title",
+        "date",
+        "slug",
+        "author",
+        "content",
+        "ogImage",
+        "coverImage",
+    ])
+    const content = await markdownToHtml(post.content || "")
 
     return {
         props: {
             post: {
-                frontmatter,
-                content
-            }
-        }
+                ...post,
+                content,
+            },
+        },
     }
 }
 
+export async function getStaticPaths()
+{
+    const posts = getAllPosts(["slug"])
 
+    return {
+        paths: posts.map((post) =>
+        {
+            return {
+                params: {
+                    slug: post.slug,
+                },
+            }
+        }),
+        fallback: false,
+    }
+}
