@@ -7,19 +7,20 @@ import ErrorPage from "../404"
 export default function Post({ post, preview })
 {
     const router = useRouter()
+
     if (!router.isFallback && !post?.slug)
     {
-        return <ErrorPage statusCode={404} />
+        return <ErrorPage />
     }
     return (
         <Layout preview={preview}>
             {router.isFallback ? (
-                <PostTitle>Loading…</PostTitle>
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">Loading</h1>
             ) : (
                 <>
                     <article className="mb-32">
                         <Head>
-                            <title>{post.title} | Delba de Oliveira</title>
+                            <title>{post.title}</title>
                             <meta property="og:image" content={post.ogImage.url} />
                         </Head>
                         <PostHeader

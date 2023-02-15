@@ -1,8 +1,10 @@
 import Layout from '../sections/Layout'
 import Link from 'next/link'
+import { getAllPosts } from '../lib/blog'
+import PostList from '../components/PostList'
 
 
-export default function Home({ posts })
+export default function Home({ allPosts })
 {
   return (
     <>
@@ -28,7 +30,6 @@ export async function getStaticProps()
     "title",
     "date",
     "slug",
-    "author",
     "coverImage",
     "excerpt",
   ])
