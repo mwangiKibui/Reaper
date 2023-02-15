@@ -1,8 +1,11 @@
 import { useRouter } from "next/router"
-import Layout from "../../components/Layout"
+import Layout from "../../sections/Layout"
 import { getPostBySlug, getAllPosts } from "../../lib/blog"
 import markdownToHtml from "../../lib/markdownToHtml"
 import ErrorPage from "../404"
+import Head from 'next/head'
+import PostHeader from "../../components/PostHeader"
+import PostBody from '../../components/PostBody'
 
 export default function Post({ post, preview })
 {
@@ -27,7 +30,6 @@ export default function Post({ post, preview })
                             title={post.title}
                             coverImage={post.coverImage}
                             date={post.date}
-                            author={post.author}
                         />
                         <PostBody content={post.content} />
                     </article>
@@ -43,7 +45,6 @@ export async function getStaticProps({ params })
         "title",
         "date",
         "slug",
-        "author",
         "content",
         "ogImage",
         "coverImage",
