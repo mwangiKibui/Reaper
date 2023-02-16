@@ -14,7 +14,6 @@ export default function Home({ allPosts })
       }}>
 
         <section className='text-xl pt-4'>
-          <h2 className='text-2xl m-0'>Blog</h2>
           <ul>
             {allPosts.length > 0 && <PostList posts={allPosts} />}
           </ul>
