@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Intro from './Intro'
 import About from './About'
 import Contact from './Contact'
-import Projects from './Projects'
 
 export default function Portfolio()
 {
@@ -23,13 +22,6 @@ export default function Portfolio()
                                 Download CV
                             </Link>
                         </div>
-                        {/* <div>
-                            <Projects />
-                        </div> */}
-
-                        {/* <div className="container mx-auto py-16 h-14 w-17 space-y-12">
-                            <Contact />
-                        </div> */}
                     </div>
                 </section>
             </Layout>
