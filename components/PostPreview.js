@@ -17,8 +17,8 @@ export default function PostPreview({
                     slug={slug}
                     title={title}
                     src={coverImage}
-                    height={278}
-                    width={556}
+                    height={250}
+                    width={300}
                 />
             </div>
             <h3 className="mb-3 text-3xl leading-snug">
@@ -26,10 +26,10 @@ export default function PostPreview({
                     <href className="hover:underline">{title}</href>
                 </Link>
             </h3>
-            <div className="mb-4 text-lg">
+            <div className="mb-4 text-base">
                 <DateFormatter dateString={date} />
             </div>
-            <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
+            <p className="mb-4 text-base leading-relaxed">{excerpt}</p>
         </div>
     )
 }
