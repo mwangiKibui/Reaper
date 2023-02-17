@@ -17,8 +17,8 @@ export default function PostPreview({
                     slug={slug}
                     title={title}
                     src={coverImage}
-                    height={250}
-                    width={300}
+                    height={300}
+                    width={240}
                 />
             </div>
             <h3 className="mb-3 text-3xl leading-snug">
