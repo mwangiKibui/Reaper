@@ -2,7 +2,6 @@ import Layout from '../sections/Layout'
 import Link from 'next/link'
 import { getAllPosts } from '../lib/blog'
 import PostList from '../components/PostList'
-import Images from 'next/legacy/Image'
 
 
 export default function Home({ allPosts })

@@ -31,7 +31,7 @@ const Layout = ({ children, pageMeta }) =>
             <div className="min-h-screen flex flex-col">
                 <Header />
                 <main className="flex-grow container mx-auto px-4 sm:px-6">{children}</main>
-                <div className="p-2 w-full pt-2 mt-8 border-t border-gray-200 text-center bottom-0 position:relative">
+                {/* <div className="p-2 w-full pt-2 mt-8 border-t border-gray-200 text-center bottom-0 position:relative">
                     <span className="inline-flex bottom-0 position:relative ">
                         <a className="ml-4 text-gray-500 ">
                             <Link href='https://twitter.com/robawn'>
@@ -48,8 +48,9 @@ const Layout = ({ children, pageMeta }) =>
                             </Link>
                         </a>
                     </span>
-                    <Footer />
-                </div>
+
+                </div> */}
+                <Footer />
             </div>
         </>
     )
