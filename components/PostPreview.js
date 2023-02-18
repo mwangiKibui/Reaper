@@ -11,9 +11,8 @@ export default function PostPreview({
 })
 {
     return (
-        < Link as={`/posts/${slug}`} href="/posts/[slug]" >
-            {/* < div className="flex max-w-5xl mx-auto gap-8" > */}
-            <div className="p-4 max-w-5xl grid gap-4 xs:grid-cols-2">
+        < div className="p-4 max-w-5xl grid gap-4 xs:grid-cols-2" >
+            < Link as={`/posts/${slug}`} href="/posts/[slug]" >
                 <div className="mb-3">
                     <CoverImage
                         slug={slug}
@@ -30,7 +29,8 @@ export default function PostPreview({
                     <DateFormatter dateString={date} />
                 </div>
                 <p className="mb-2 text-sm leading-relaxed">{excerpt}</p>
-            </div >
-        </Link >
+            </Link >
+        </div >
+
     )
 }
