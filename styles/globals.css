@@ -12,3 +12,9 @@
     @apply text-white bg-blue-600;
   }
 }
+
+@layer utilities{
+  .square{
+    aspect-ratio: 2/1;
+  }
+}

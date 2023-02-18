@@ -13,10 +13,10 @@ export default function Home({ allPosts })
         description: 'Homepage'
       }}>
 
-        <section className='text-xl pt-4'>
-          <ul>
-            {allPosts.length > 0 && <PostList posts={allPosts} />}
-          </ul>
+        <section>
+            <ul>
+              {allPosts.length > 0 && <PostList posts={allPosts} />}
+            </ul>
         </section>
       </Layout>
     </>
