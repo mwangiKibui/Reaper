@@ -21,9 +21,9 @@ const Layout = ({ children, pageMeta }) =>
                 <meta name="description" content={meta.description} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 {/* <meta property="og:url" content={`http://localhost:3000${router.asPath}`} /> */}
-                <meta property="og:type" content={meta.type} />
+                {/* <meta property="og:type" content={meta.type} />
                 <meta property="og:site_name" content={"A Coding Skill Guide"} />
-                <meta property="og:description" content={meta.description} />
+                <meta property="og:description" content={meta.description} /> */}
                 <meta property="og:title" content={meta.title} />
                 <link rel="icon" href="raspel2.ico" />
             </Head>
