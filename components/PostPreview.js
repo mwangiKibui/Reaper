@@ -11,8 +11,8 @@ export default function PostPreview({
 })
 {
     return (
-        //  <div className="flex max-w-5xl mx-auto gap-8 group">
-        <div className="p-4 max-w-5xl grid gap-4 xs:grid-cols-2">
+         <div className="flex max-w-5xl mx-auto gap-8 group">
+        {/* <div className="p-4 max-w-5xl grid gap-4 xs:grid-cols-2"> */}
                 <Link as={`/posts/${slug}`} href="/posts/[slug]">
                 <div className="mb-5">
                     <CoverImage
