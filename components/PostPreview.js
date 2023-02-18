@@ -11,15 +11,15 @@ export default function PostPreview({
 })
 {
     return (
-        < div className="p-4 max-w-5xl grid gap-4 xs:grid-cols-2" >
+        < div className="p-4 max-w-5xl grid gap-4 xs:grid-cols-2 hover:bg-gray-400" >
             < Link as={`/posts/${slug}`} href="/posts/[slug]" >
                 <div className="mb-3">
                     <CoverImage
                         slug={slug}
                         title={title}
                         src={coverImage}
-                        height={300}
-                        width={240}
+                        height={250}
+                        width={150}
                     />
                 </div>
                 <h3 className="mb-3 text-xl leading-snug">
