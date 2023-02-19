@@ -9,7 +9,7 @@ import Layout from "../../sections/Layout"
 import ErrorPage from "../404"
 
 export default function PostPage({
-    frontmatter: { title, date, cover_image },
+    frontmatter: { title, date, coverImage },
     slug,
     content, })
 {
@@ -21,15 +21,15 @@ export default function PostPage({
     // }
     return (
         <Layout>
-            <div className='px-3.5 shadow-md rounded-lg py-3.5'>
-                <h1 className='p-2.5'>{title}</h1>
-                <div className='bg-grey-200 mb-6 pl-1 pr-2'>{date}</div>
-                <img src={cover_image} alt='' />
+            <section className='px-3.5 shadow-md rounded-lg py-3.5 text-gray-800 hover:text-gray-600'>
+                <h1 className='font-bold text-xl '>{title}</h1>
+                <div className='mb-6 pl-1 pr-2'>{date}</div>
+                <img src={coverImage} alt='' />
                 <div className='text-5xl font-bold ml-2.5 mr-0'>
                     <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
                 </div>
                 <div>{slug}</div>
-            </div>
+            </section>
         </Layout>
     )
 }
