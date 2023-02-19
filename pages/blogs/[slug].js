@@ -13,24 +13,22 @@ export default function PostPage({
     slug,
     content, })
 {
-    const router = useRouter()
+    // const router = useRouter()
 
-    if (!router.isFallback && !post?.slug)
-    {
-        return <ErrorPage />
-    }
+    // if (!router.isFallback && !post?.slug)
+    // {
+    //     return <ErrorPage />
+    // }
     return (
         <Layout>
-            <Link href='/'>
-                <a className='btn btn-back'>Go Back</a>
-            </Link>
             <div className='px-3.5 shadow-md rounded-lg py-3.5'>
                 <h1 className='p-2.5'>{title}</h1>
-                <div className='bg-grey-200 mb-6 pl-1 pr-2'>Posted on {date}</div>
+                <div className='bg-grey-200 mb-6 pl-1 pr-2'>{date}</div>
                 <img src={cover_image} alt='' />
                 <div className='text-5xl font-bold ml-2.5 mr-0'>
                     <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
                 </div>
+                <div>{slug}</div>
             </div>
         </Layout>
     )
