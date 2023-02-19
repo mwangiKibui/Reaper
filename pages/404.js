@@ -16,8 +16,6 @@ export default function NotFound()
                         <p className="text-xl pt-5">You have stumbled upon a missing page</p>
                     </div>
                 </div>
-
-                //come up with the rotating animation for loading up.
             </Layout>
         </>
     )
