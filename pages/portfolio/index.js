@@ -13,8 +13,8 @@ export default function Portfolio()
                 description: 'This is a Portfolio for Robert Wachira'
             }}>
                 <section className='container mx-auto md:px-20 py-10'>
-                    <div className="flex flex-col  sm:mt-24 ">
-                        <div className="space-y-4 max-w-4xl mx-auto">
+                    <div className="flex flex-col sm:mt-24 container mx-auto py-16 h-full ">
+                        <div className="py-3 max-w-4xl mx-auto">
                             <Intro />
 
                             {/* <div className="container mx-auto py-16 h-full flex flex-col items-center space-y-12">

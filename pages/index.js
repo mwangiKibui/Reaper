@@ -15,7 +15,7 @@ export default function Home({ posts })
         title: 'Raspel',
         description: 'Homepage'
       }}>
-        <section className='container mx-auto md:px-20 py-10'>
+        <section className='container mx-auto md:px-20 py-10 '>
           <div className='grid grid-cols-2 gap-14 md:grid-cols-2 sm:grid-cols-1'>
             {posts.map((post, index) => (
               <Post key={index} post={post} />
