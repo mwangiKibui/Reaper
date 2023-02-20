@@ -26,6 +26,9 @@ export default function Portfolio()
                         </div>
                         {/* <About /> */}
                     </div>
+                    {/* <div className='mt-30'>
+                        <Contact />
+                    </div> */}
                 </section>
             </Layout>
         </>

@@ -4,12 +4,10 @@ export default function Contact()
 {
     return (
         <>
-
-            <section className="text-gray-600 body-font relative">
-                <div className="container px-5 py-24 mx-auto">
+            <section className="text-gray-600 mt-70 body-font relative">
+                <div className="container px-5 py-16 mx-auto md:px-20">
                     <div className="flex flex-col text-center w-full mb-1">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-
+                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-500">Contact Us</h1>
                     </div>
                     <div className="lg:w-1/2 md:w-2/3 mx-auto">
                         <div className="flex flex-wrap -m-2">
