@@ -5,6 +5,11 @@ import Layout from '../sections/Layout'
 import Link from 'next/link'
 import Post from '../components/Post'
 import { sortByDate } from '../utils'
+// import { Roboto } from '@next/font/google'
+
+// const roboto = Roboto({
+//   weights: `300`, `400`, `500`, `700`, `900`
+// })
 
 
 export default function Home({ posts })
@@ -15,8 +20,13 @@ export default function Home({ posts })
         title: 'Raspel',
         description: 'Homepage'
       }}>
-        <section className='container mx-auto md:px-20 py-10 '>
-          <div className='grid grid-cols-2 p-10 gap-5 md:grid-cols-2 sm:grid-cols-1'>
+        <section className='container mx-auto md:px-5 py-10' >
+          <div>
+            <h1 className='text-center justify-between text-4xl'>
+              Welcome
+            </h1>
+          </div>
+          <div className='grid grid-cols-2 p-28 gap-16 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1'>
             {posts.map((post, index) => (
               <Post key={index} post={post} />
             ))}
