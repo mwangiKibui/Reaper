@@ -5,11 +5,6 @@ import Layout from '../sections/Layout'
 import Link from 'next/link'
 import Post from '../components/Post'
 import { sortByDate } from '../utils'
-// import { Roboto } from '@next/font/google'
-
-// const roboto = Roboto({
-//   weights: `300`, `400`, `500`, `700`, `900`
-// })
 
 
 export default function Home({ posts })
