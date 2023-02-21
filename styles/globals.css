@@ -1,15 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans {
-      font-family: Roboto{
-        normal:
-      };
-    }
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
     @apply min-h-screen;
   }
 

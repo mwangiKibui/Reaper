@@ -14,4 +14,10 @@ module.exports = {
   },
   plugins: [],
 
+  theme: {
+    fontFamily: {
+      'sans': ['Roboto'],
+    }
+  }
+
 };

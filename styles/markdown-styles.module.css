@@ -1,6 +1,0 @@
-.postbody ul,
-.postbody ol {
-  @apply text-5xl
-  font-bold
-  ml-2.5 mr-0;
-}
