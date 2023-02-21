@@ -5,7 +5,11 @@
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans {
+      font-family: Roboto{
+        normal:
+      };
+    }
     @apply min-h-screen;
   }
 
