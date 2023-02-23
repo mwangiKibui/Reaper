@@ -1,13 +1,13 @@
 import Layout from "../../sections/Layout";
 import Link from "next/link"
 
-export default function Java()
+export default function IT()
 {
     return (
         <>
             <Layout pageMeta={{
-                title: 'FrontEnd',
-                description: 'FrontEnd Articles'
+                title: 'IT Stuff',
+                description: 'IT Stuff Articles'
             }}>
                 <section className='container mx-auto md:px-20 py-10'>
                     <div className="container mx-auto py-16 h-full flex flex-col space-y-12">

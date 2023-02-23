@@ -1,7 +1,7 @@
 import Layout from "../../sections/Layout";
 import Link from "next/link"
 
-export default function Java()
+export default function Frontend()
 {
     return (
         <>
