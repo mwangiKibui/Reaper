@@ -4,12 +4,13 @@ import matter from 'gray-matter'
 import marked from 'marked'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import readingTime from 'reading-time'
 
 import Layout from "../../sections/Layout"
 import ErrorPage from "../404"
 
 export default function PostPage({
-    frontmatter: { title, date, coverImage },
+    frontmatter: { title, date, coverImage, time },
     slug,
     content, })
 {
@@ -19,11 +20,16 @@ export default function PostPage({
     // {
     //     return <ErrorPage />
     // }
+
+
     return (
         <Layout>
             <section className='px-3.5 shadow-md rounded-lg py-3.5 text-gray-800 hover:text-gray-600'>
                 <h1 className='font-bold text-xl '>{title}</h1>
-                <div className='mb-6 pl-1 pr-2'>{date}</div>
+                <div className='mb-6 pl-1 pr-2'>
+                    {date}
+                    {time}
+                </div>
                 <img src={coverImage} alt='' />
                 <div className='text-5xl font-bold ml-2.5 mr-0'>
                     <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
@@ -56,6 +62,7 @@ export async function getStaticProps({ params: { slug } })
         path.join('posts', slug + '.mdx'),
         'utf-8'
     )
+    const time = readingTime(content, 10)
 
     const { data: frontmatter, content } = matter(markdownWithMeta)
 
@@ -64,6 +71,7 @@ export async function getStaticProps({ params: { slug } })
             frontmatter,
             slug,
             content,
+            time
         },
     }
 }
