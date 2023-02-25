@@ -5,10 +5,10 @@ export default function Intro()
 {
     return (
         <>
-            <p className="text-xl sm:text-2xl absolute left-0 top-40 h-16">
+            <p className="text-2xl sm:text-2xl absolute left-0 top-40 h-16">
                 Hello. I am Robert Wachira
             </p>
-            <div className='absolute left-0 top-55 h-16 w-70'>
+            <div className='absolute left-0 mt-5 h-16 w-70 text-xl'>
                 <Typewriter
                     onInit={(typewriter) =>
                     {
