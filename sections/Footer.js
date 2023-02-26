@@ -5,7 +5,10 @@ export default function Footer()
 {
     return (
         <>
-            <footer className="px-4 sm:px-6 py-6 flex items-start justify-between sticky bottom-0">
+            <footer className="px-4 sm:px-6 py-6 flex justify-between sticky bottom-0">
+                <p className="items-center justify-center text-xl text-gray-500 align-middle">
+                    © {new Date().getFullYear()} Raspel.
+                </p>
                 <div className="flex flex-row items-center">
                     <SocialIcon
                         url='https://twitter.com/robawn'
@@ -18,9 +21,7 @@ export default function Footer()
                         bgColor="transparent"
                     />
                 </div>
-                <p className="items-center justify-center text-xl text-gray-500">
-                    © {new Date().getFullYear()} Raspel.
-                </p>
+
             </footer>
         </>
     )

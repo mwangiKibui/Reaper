@@ -17,6 +17,7 @@
     "classnames": "^2.3.2",
     "comma-number": "^2.1.0",
     "date-fns": "^2.29.3",
+    "devicon": "^2.15.1",
     "dotenv": "^16.0.3",
     "fetcher": "^0.3.0",
     "glob": "^8.1.0",

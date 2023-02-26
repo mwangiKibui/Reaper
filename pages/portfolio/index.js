@@ -19,10 +19,10 @@ export default function Portfolio()
                         <div className="text-center">
                             <Intro />
                         </div>
-                        <div>
+                        <div className="text-center">
                             <About />
                         </div>
-                        <div>
+                        <div className="text-center">
                             <TechStack />
                         </div>
                         <div>
