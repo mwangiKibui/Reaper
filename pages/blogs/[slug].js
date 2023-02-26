@@ -11,14 +11,6 @@ export default function PostPage({
     slug,
     content, })
 {
-    // const router = useRouter()
-
-    // if (!router.isFallback && !post?.slug)
-    // {
-    //     return <ErrorPage />
-    // }
-
-
     return (
         <Layout>
             <section className='px-3.5 shadow-md rounded-lg py-3.5 text-gray-800 hover:text-gray-600'>
