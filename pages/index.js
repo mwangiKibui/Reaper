@@ -17,11 +17,17 @@ export default function Home({ posts })
       }}>
         <section className='container mx-auto md:px-5 py-10' >
           <div>
-            <h1 className='text-center justify-between text-4xl'>
+            <h1 className='text-center font-bold justify-between text-4xl'>
               Welcome
             </h1>
+            <p className='text-2xl text-center items-center justify-between mt-6'>
+              Immerse yourself in deep knowledge ranging from coding skills to new IT topics
+            </p>
+            <p className='text-2xl text-center items-center justify-center'>
+              and find out more on the emerging technolgies present and be able to embrace it, here at Raspel.
+            </p>
           </div>
-          <div className='grid grid-cols-2 p-28 gap-16 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1'>
+          <div className='grid grid-cols-2 p-28 gap-16 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 -mt-24'>
             {posts.map((post, index) => (
               <Post key={index} post={post} />
             ))}

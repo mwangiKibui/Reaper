@@ -2,8 +2,8 @@ export default function TechStack()
 {
     return (
         <section className='container mx-auto md:px-20 py-16 items-center justify-center'>
-            <p className="text-4xl gap-5 mb-4 text-bold">TechStacks</p>
-            <h3 className="text-center text-3xl">
+            <p className="text-4xl gap-5 mb-4 font-medium leading-7">TechStacks</p>
+            <h3 className="text-center text-2xl mt-8">
                 This is the list of the TechStack that I have experience in:
             </h3>
             <div className="grid grid-cols-3 gap-8 group relative mt-12 items-center justify-center pl-44">
