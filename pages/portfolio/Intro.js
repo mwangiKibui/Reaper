@@ -5,6 +5,9 @@ export default function Intro()
 {
     return (
         <>
+            <p className="leading-7 text-2xl mt-5">
+                Hello. I am Robert Wachira
+            </p>
             <div className='leading-7 mt-5 text-xl'>
                 <Typewriter
                     onInit={(typewriter) =>
