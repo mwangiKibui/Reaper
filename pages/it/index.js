@@ -1,5 +1,4 @@
 import Layout from "../../sections/Layout";
-import Link from "next/link"
 
 export default function IT()
 {

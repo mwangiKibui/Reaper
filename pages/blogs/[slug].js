@@ -2,12 +2,9 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import readingTime from 'reading-time'
-
 import Layout from "../../sections/Layout"
-import ErrorPage from "../404"
+
 
 export default function PostPage({
     frontmatter: { title, date, coverImage, time },

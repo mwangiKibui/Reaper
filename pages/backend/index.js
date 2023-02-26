@@ -1,5 +1,4 @@
-import Layout from "../../sections/Layout";
-import Link from "next/link"
+import Layout from "../../sections/Layout"
 
 export default function BackEnd()
 {

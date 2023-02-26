@@ -1,5 +1,3 @@
-import { Swiper, SwiperSlide } from 'swiper'
-
 export default function About()
 {
     return (

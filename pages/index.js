@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Layout from '../sections/Layout'
-import Link from 'next/link'
 import Post from '../components/Post'
 import { sortByDate } from '../utils'
 

@@ -1,7 +1,6 @@
-import Head from 'next/head'
+import Head from 'next/Head'
 import Header from './Header'
 import Footer from './Footer'
-import Link from 'next/link'
 // import useRouter from 'next/router'
 
 const Layout = ({ children, pageMeta }) =>
