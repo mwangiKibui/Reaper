@@ -1,6 +1,6 @@
 // import { Swiper, SwiperSlide } from 'swiper'
 
-// export default function Tech()
+// export default function About()
 // {
 //     return (
 //         <section className='container mx-auto md:px-20 py-16'>
