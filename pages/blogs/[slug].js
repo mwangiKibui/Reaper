@@ -2,14 +2,14 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import readingTime from 'reading-time'
+// import readingTime from 'reading-time'
 import Layout from "../../sections/Layout"
 
 
-export default function PostPage({
-    frontmatter: { title, date, coverImage, time },
+export default function PostPage({ post,
+    frontmatter: { title, date, coverImage },
     slug,
-    content, })
+    content })
 {
     return (
         <Layout>
@@ -17,7 +17,6 @@ export default function PostPage({
                 <h1 className='font-bold text-xl '>{title}</h1>
                 <div className='mb-6 pl-1 pr-2'>
                     {date}
-                    {time}
                 </div>
                 <img src={coverImage} alt='' />
                 <div className='text-5xl font-bold ml-2.5 mr-0'>
@@ -27,6 +26,30 @@ export default function PostPage({
             </section>
         </Layout>
     )
+}
+
+
+export async function getStaticProps({ params: { slug } })
+{
+
+    const markdownWithMeta = fs.readFileSync(
+        path.join('posts', slug + '.mdx'),
+        'utf-8'
+    )
+    const data = await getPostPage(params.slug)
+    // const time = readingTime(content, 10)
+
+    const { data: frontmatter, content } = matter(markdownWithMeta)
+
+    return {
+        props: {
+            post: data,
+            frontmatter,
+            slug,
+            data,
+            content,
+        },
+    }
 }
 
 export async function getStaticPaths()
@@ -45,22 +68,4 @@ export async function getStaticPaths()
     }
 }
 
-export async function getStaticProps({ params: { slug } })
-{
-    const markdownWithMeta = fs.readFileSync(
-        path.join('posts', slug + '.mdx'),
-        'utf-8'
-    )
-    const time = readingTime(content, 10)
 
-    const { data: frontmatter, content } = matter(markdownWithMeta)
-
-    return {
-        props: {
-            frontmatter,
-            slug,
-            content,
-            time
-        },
-    }
-}
