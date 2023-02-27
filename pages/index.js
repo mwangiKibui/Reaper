@@ -27,9 +27,10 @@ export default function Home({ posts })
             </p>
           </div>
           <div className='grid grid-cols-2 p-28 gap-16 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 -mt-24'>
-            {posts.map((post, index) => (
-              <Post key={index} post={post} />
-            ))}
+            {posts.map((post, index) =>
+            {
+              return <Post key={index} post={post} />
+            })}
           </div>
         </section>
       </Layout>

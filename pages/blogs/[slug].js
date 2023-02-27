@@ -2,9 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-// import readingTime from 'reading-time'
 import Layout from "../../sections/Layout"
-
 
 export default function PostPage({ post,
     frontmatter: { title, date, coverImage },
@@ -28,44 +26,61 @@ export default function PostPage({ post,
     )
 }
 
-
-export async function getStaticProps({ params: { slug } })
-{
-
-    const markdownWithMeta = fs.readFileSync(
-        path.join('posts', slug + '.mdx'),
-        'utf-8'
-    )
-    const data = await getPostPage(params.slug)
-    // const time = readingTime(content, 10)
-
-    const { data: frontmatter, content } = matter(markdownWithMeta)
-
-    return {
-        props: {
-            post: data,
-            frontmatter,
-            slug,
-            data,
-            content,
-        },
-    }
-}
-
 export async function getStaticPaths()
 {
-    const files = fs.readdirSync(path.join('posts'))
+    const postsDirectory = path.join(process.cwd(), 'posts')
+    const filenames = fs.readdirSync(postsDirectory)
 
-    const paths = files.map((filename) => ({
-        params: {
-            slug: filename.replace('.mdx', ''),
-        },
-    }))
+    const slugs = filenames.map((filename) =>
+    {
+        const filePath = path.join(postsDirectory, filename)
+        const fileContents = fs.readFileSync(filePath, 'utf-8')
+        const { data } = matter(fileContents)
+
+        return data.slug
+    })
+
+    const paths = slugs.map((slug) => ({ params: { slug } }))
+
+    // const paths = posts.map((post) => ({ params: { slug: post.slug } }))
+
+    // const paths = files.map((fileName) => ({
+    //     slug: fileName.replace('.mdx', ''),
+    // }))
 
     return {
         paths,
         fallback: false,
     }
+}
+
+export async function getStaticProps({ params })
+{
+
+    const postsDirectory = path.join(process.cwd(), 'posts')
+    const filePath = path.join(postsDirectory, `${params.slug}.mdx`)
+    const fileContents = fs.readFileSync(filePath, 'utf8')
+    const { data, content } = matter(fileContents)
+
+    return { props: { post: { ...data, content } } }
+
+
+    // const { slug } = params
+
+    // const markdownWithMeta = fs.readFileSync(
+    //     path.join('posts', `${slug}` + '.mdx'),
+    //     'utf-8')
+
+    // const { data: frontmatter, content } = matter(markdownWithMeta)
+
+    // return {
+    //     props: {
+    //         frontmatter,
+    //         slug,
+    //         data,
+    //         content,
+    //     },
+    // }
 }
 
 
