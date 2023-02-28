@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import { marked } from 'marked'
 import Layout from "../../sections/Layout"
 
-export default function PostPage({ post,
+export default function PostPage({ data,
     frontmatter: { title, date, coverImage },
     slug,
     content })
