@@ -11,7 +11,7 @@ export default function Post({ post })
                         <div className='mt-2 px-0 font-bold text-2xl leading-7'>{post.frontmatter.title}</div>
                         <div className='mb-2 p-0 text-sm'>{post.frontmatter.date}</div>
                         <p className='mb-3 text-base leading-6'>{post.frontmatter.excerpt}</p>
-                        <p>{post.frontmatter.content}</p>
+                        <p className='mb-3 text-base leading-6'>{post.frontmatter.content}</p>
                     </div>
                 </div>
             </Link>
