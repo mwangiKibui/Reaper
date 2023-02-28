@@ -21,6 +21,7 @@ export default function PostPage({ data,
                     <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
                 </div>
                 <div>{slug}</div>
+                <div>{data }</div>
             </section>
         </Layout>
     )
