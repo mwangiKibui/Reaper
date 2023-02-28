@@ -21,7 +21,7 @@ export default function PostPage({ data,
                     <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
                 </div>
                 <div>{slug}</div>
-                <div>{data }</div>
+                <div>{data}</div>
             </section>
         </Layout>
     )
@@ -50,6 +50,7 @@ export async function getStaticPaths()
     // }))
 
     return {
+        slugs,
         paths,
         fallback: false,
     }
