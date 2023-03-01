@@ -21,7 +21,6 @@ export default function PostPage({ data,
                     <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
                 </div>
                 <div>{slug}</div>
-                <div>{data}</div>
             </section>
         </Layout>
     )
@@ -59,30 +58,27 @@ export async function getStaticPaths()
 export async function getStaticProps({ params })
 {
 
-    const postsDirectory = path.join(process.cwd(), 'posts')
-    const filePath = path.join(postsDirectory, `${params.slug}.mdx`)
-    const fileContents = fs.readFileSync(filePath, 'utf8')
-    const { data, content } = matter(fileContents)
+    // const postsDirectory = path.join(process.cwd(), 'posts')
+    // const filePath = path.join(postsDirectory, `${params.slug}.mdx`)
+    // const fileContents = fs.readFileSync(filePath, 'utf8')
+    // const { data, content } = matter(fileContents)
 
-    return { props: { post: { ...data, content } } }
+    // return { props: { post: { ...data, content } } }
 
 
-    // const { slug } = params
+    const markdownWithMeta = fs.readFileSync(
+        path.join('posts', `${slug}` + '.mdx'),
+        'utf-8')
 
-    // const markdownWithMeta = fs.readFileSync(
-    //     path.join('posts', `${slug}` + '.mdx'),
-    //     'utf-8')
+    const { data: frontmatter, content } = matter(markdownWithMeta)
 
-    // const { data: frontmatter, content } = matter(markdownWithMeta)
-
-    // return {
-    //     props: {
-    //         frontmatter,
-    //         slug,
-    //         data,
-    //         content,
-    //     },
-    // }
+    return {
+        props: {
+            frontmatter,
+            slug,
+            content,
+        },
+    }
 }
 
 
