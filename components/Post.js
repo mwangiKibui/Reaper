@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import PostPage from '../pages/blogs/[slug]'
 
 export default function Post({ post })
 {
