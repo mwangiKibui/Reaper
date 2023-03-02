@@ -10,7 +10,7 @@ export default function Contact()
                     <form className="mx-auto"
                     // onSubmit={handleSubmit(onsubmit)}
                     >
-                        <div className="flex flex-wrap -m-2 pl-52">
+                        <div className="flex flex-wrap -m-2 pl-52 sm:pl-24">
                             <div className="p-2 w-2/5">
                                 <div className="relative">
                                     <label for="name" className="leading-7 text-sm">Name</label>
@@ -29,7 +29,7 @@ export default function Contact()
                                     <textarea id="message" name="message" className="w-full bg-gray-100 bg-opacity-75 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                                 </div>
                             </div>
-                            <div className="p-2 w-1/2 pl-72">
+                            <div className="p-2 w-1/2 pl-72 sm:pl-36">
                                 <button className="flex mx-auto text-white bg-blue-600 border-0 py-2 px-8 focus:outline-none hover:bg-blue-700 rounded text-lg">Submit</button>
                             </div>
 
