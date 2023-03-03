@@ -6,7 +6,7 @@ export default function Post({ post })
     return (
         <div className='flex flex-col mt-12 shadow-md rounded-md py-12  text-#7f7f7f hover:text-gray-600 overflow-hidden'>
             <Link href={`/blog/${post.slug}`}>
-                <img src={post.frontmatter.coverImage} alt='' className='h-64 w-full object-cover rounded-md sm:h-32' />
+                <img src={post.frontmatter.coverImage} alt='' className='md:h-64 lg:h-64 w-full object-cover rounded-md sm:h-32' />
                 <div className='px-6 py-4 flex flex-col justify-between'>
                     <div className='h-10 flex-1 sm:h-5'>
                         <div className='mt-2 px-0 font-bold text-2xl leading-7'>{post.frontmatter.title}</div>
