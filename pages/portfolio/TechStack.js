@@ -13,7 +13,7 @@ export default function TechStack()
                         className="h-28"
                         href=''
                     />
-                    <p className="text-2xl mt-4 pr-48 sm:pr-20">Java</p>
+                    <p className="text-2xl mt-4 md:pr-48 lg:pr-48">Java</p>
                 </div>
                 <div>
                     <img
@@ -21,7 +21,7 @@ export default function TechStack()
                         className="h-28"
                         href='https://nextjs.org/'
                     />
-                    <p className="text-2xl mt-4 pr-44 sm:pr-20">Next.js</p>
+                    <p className="text-2xl mt-4 md:pr-44 lg:pr-44 sm:pr-20">Next.js</p>
                 </div>
                 <div>
                     <img
@@ -29,7 +29,7 @@ export default function TechStack()
                         className="h-28"
                         href='https://kubernetes.io/'
                     />
-                    <p className="text-2xl mt-4 pr-44 sm:pr-20">Kubernetes</p>
+                    <p className="text-2xl mt-4 md:pr-44 lg:pr-44 sm:pr-20">Kubernetes</p>
                 </div>
                 <div>
                     <img
@@ -37,7 +37,7 @@ export default function TechStack()
                         className="h-28"
                         href='https://nodejs.org/en/'
                     />
-                    <p className="text-2xl mt-4 pr-44 sm:pr-20">Node.js</p>
+                    <p className="text-2xl mt-4 md:pr-44 lg:pr-44 sm:pr-20">Node.js</p>
                 </div>
                 <div>
                     <img
@@ -45,7 +45,7 @@ export default function TechStack()
                         className="h-28"
                         href='https://www.mongodb.com/'
                     />
-                    <p className="text-2xl mt-4 pr-44 sm:pr-20">MongoDB</p>
+                    <p className="text-2xl mt-4 md:pr-44 lg:pr-44 sm:pr-20">MongoDB</p>
                 </div>
                 <div>
                     <img
@@ -53,7 +53,7 @@ export default function TechStack()
                         className="h-28"
                         href='https://graphql.org/'
                     />
-                    <p className="text-2xl mt-4 pr-44 sm:pr-20">GraphQL</p>
+                    <p className="text-2xl mt-4 md:pr-44 lg:pr-44 sm:pr-20">GraphQL</p>
                 </div>
 
             </div>
