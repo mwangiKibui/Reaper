@@ -6,7 +6,10 @@ export default function Intro()
     return (
         <>
             <p className="leading-7 text-4xl mt-5 font-medium">
-                Hello. I am Robert Wachira
+                Hello.
+            </p>
+            <p className="leading-7 text-4xl mt-5 font-medium">
+                I am Robert Wachira
             </p>
             <div className='leading-7 mt-5 text-2xl'>
                 <Typewriter
